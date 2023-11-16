@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-highlight
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-ms-highlight
@@ -34,7 +34,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-members
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-ms-members
@@ -49,7 +49,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-identity
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-ms-identity
@@ -64,7 +64,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-bookings
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-ms-bookings
@@ -79,7 +79,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-notification
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-ms-notification
@@ -94,7 +94,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
-        id: meta
+        id: meta-api-gateway
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: yeiale/dbeleza-api-gateway
