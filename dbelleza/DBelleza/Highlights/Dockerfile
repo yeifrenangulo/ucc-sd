@@ -1,13 +1,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY Highlights.csproj .
-RUN dotnet restore
-COPY . .
-RUN dotnet publish -c release -o /app
-
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-COPY --from=build /app .
+
+COPY ./dbelleza/DBelleza/Highlights/Highlights.csproj .
+RUN dotnet restore
+
+COPY ./dbelleza/DBelleza/Highlights/ .
+RUN dotnet build -c Release -o out
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/out .
 ENTRYPOINT ["dotnet", "Highlights.dll"]
