@@ -30,8 +30,8 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/Highlights/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-highlight.outputs.tags }}
+          labels: ${{ steps.meta-highlight.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta-members
@@ -45,8 +45,8 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/Members/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-members.outputs.tags }}
+          labels: ${{ steps.meta-members.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta-identity
@@ -60,8 +60,8 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/Identity/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-identity.outputs.tags }}
+          labels: ${{ steps.meta-identity.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta-bookings
@@ -75,8 +75,8 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/Bookings/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-bookings.outputs.tags }}
+          labels: ${{ steps.meta-bookings.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta-notification
@@ -90,8 +90,8 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/Notifications/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-notification.outputs.tags }}
+          labels: ${{ steps.meta-notification.outputs.labels }}
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta-api-gateway
@@ -105,5 +105,5 @@ jobs:
           context: .
           file: ./dbelleza/DBelleza/ApiGateway/Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta-api-gateway.outputs.tags }}
+          labels: ${{ steps.meta-api-gateway.outputs.labels }}
